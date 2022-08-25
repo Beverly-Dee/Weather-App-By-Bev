@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import Layout from "./Layout";
 import "weather-icons/css/weather-icons.css";
-import "weather-icons-master/css/weather-icons-wind.css";
 import Alert from "./Alert";
 //import NinjaBus from "./NinjaBus";
 
