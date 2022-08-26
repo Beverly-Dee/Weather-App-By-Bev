@@ -39,8 +39,7 @@
   padding: 20px;
   color: greenyellow;
   background: linear-gradient(145deg, #000000, #000000);
-  box-shadow:  3px 3px 5px red,
-               -2px -2px 5px rgb(43, 43, 43);
+  box-shadow: 3px 3px 5px red, -2px -2px 5px rgb(43, 43, 43);
 }
 
 .Header {
@@ -52,11 +51,13 @@
   margin-top: 25px;
   margin-bottom: 25px;
   border-radius: 26px;
-background: linear-gradient(145deg, #000000, #000000);
-box-shadow:  3px 3px 5px #ff0000,
-             -2px -2px 5px rgb(43, 43, 43);
+  background: linear-gradient(145deg, #000000, #000000);
+  box-shadow: 3px 3px 5px #ff0000, -2px -2px 5px rgb(43, 43, 43);
 }
 
+.Header span {
+  color: red;
+}
 
 #Header:hover {
   background: linear-gradient(
@@ -91,8 +92,7 @@ box-shadow:  3px 3px 5px #ff0000,
   border-radius: 5px;
   color: greenyellow;
   background: linear-gradient(145deg, #000000, #000000);
-box-shadow:  3px 3px 5px #ff0000,
-             -2px -2px 5px rgb(43, 43, 43);
+  box-shadow: 3px 3px 5px #ff0000, -2px -2px 5px rgb(43, 43, 43);
 }
 
 .button {
@@ -105,11 +105,10 @@ box-shadow:  3px 3px 5px #ff0000,
 
 .button {
   border-radius: 10px;
-  border-color:black;
+  border-color: black;
   font-size: 15px;
   background: linear-gradient(145deg, #000000, #000000);
-box-shadow:  3px 3px 5px red,
-             -2px -2px 5px rgb(43, 43, 43);
+  box-shadow: 3px 3px 5px red, -2px -2px 5px rgb(43, 43, 43);
 }
 
 .button span {
@@ -141,7 +140,6 @@ box-shadow:  3px 3px 5px red,
   text-shadow: 2px 2px 0px red;
 }
 
-
 #name1 {
   padding: 5px;
   background-color: #000000;
@@ -156,16 +154,16 @@ box-shadow:  3px 3px 5px red,
 }
 
 #name2 {
- padding: 5px;
- background-color: #000000;
- display: flex;
- height: 100%;
- width: 100%;
- padding: 10px;
- justify-content: center;
- align-items: center;
- text-shadow: 2px 2px 0px rgb(255, 0, 0);
- cursor: default;
+  padding: 5px;
+  background-color: #000000;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 0px rgb(255, 0, 0);
+  cursor: default;
 }
 
 .padding-top-bottom i {
@@ -189,63 +187,65 @@ box-shadow:  3px 3px 5px red,
   cursor: default;
 }
 
- i {
+.description {
+  text-transform: capitalize;
+}
+
+i {
   font-size: relative;
   position: relative;
   padding-right: 10px;
 }
 
-.alien{
+.alien {
   padding-bottom: 20px;
-  }
-  
-  .alien:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  
-  }
-  
-  #stars {
-    padding-bottom: 10px;
-  }
+}
 
-  h5:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #meteor:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #fire:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #cloud:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #earthquake:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #sunrise:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #sunset:hover {
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
-  
-  #wind:hover{
-    text-shadow: 2px 2px 0px red;
-    cursor: default;
-  }
+.alien:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
 
+#stars {
+  padding-bottom: 10px;
+}
+
+h5:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#meteor:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#fire:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#cloud:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#earthquake:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#sunrise:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#sunset:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}
+
+#wind:hover {
+  text-shadow: 2px 2px 0px red;
+  cursor: default;
+}

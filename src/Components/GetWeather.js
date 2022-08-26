@@ -8,14 +8,14 @@ import Alert from "./Alert";
 
 const GetWeather = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   //const [NarutoShout, setNarutoShout] = useState('Believe it! Dattebayo!')
 
   useEffect(() => {
     const firstLoadOfData = async () => {
       const city = "Cape Town";
       const res = await axios.get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e9629992d0bde86eaddc6391f50171b7`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e9629992d0bde86eaddc6391f50171b7`
       );
       manipulatingData(res.data);
     };
@@ -26,19 +26,16 @@ const GetWeather = () => {
   const findWeatherByCity = async (city) => {
     try {
       const res = await axios.get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e9629992d0bde86eaddc6391f50171b7`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e9629992d0bde86eaddc6391f50171b7`
       );
-
 
       manipulatingData(res.data);
     } catch (error) {
       if (error) {
-        getAlertMessage('City not on WorldWeather list')
-        
+        getAlertMessage("City not on WorldWeather list");
       }
     }
   };
-
 
   const manipulatingData = (result) => {
     console.log(result);
@@ -48,10 +45,9 @@ const GetWeather = () => {
       result.main;
     const { lat, lon } = result.coord;
     const { description, id } = result.weather[0];
-    const { sunrise } = result.sys;
-    const { sunset } = result.sys;
-    const { deg, } = result.wind;
-
+    const sunrise = new Date((result.sys.sunrise + result.timezone) * 1000);
+    const sunset = new Date((result.sys.sunset + result.timezone) * 1000);
+    const { deg } = result.wind;
 
     setWeatherData({
       name: name,
@@ -63,15 +59,14 @@ const GetWeather = () => {
       humidity: humidity,
       pressure,
       lat,
-      lon, 
+      lon,
       description,
-      icon: getWeatherIcon (id),
-      sunrise: new Date (sunrise*1000).toLocaleTimeString(),
-      sunset: new Date (sunset*1000).toLocaleTimeString(),
-      deg: getWindIcon (deg),
+      icon: getWeatherIcon(id),
+      sunrise: new Date(sunrise).toUTCString(),
+      sunset: new Date(sunset).toUTCString(),
+      deg: getWindIcon(deg),
     });
   };
-  
 
   const getWeatherIcon = (rangeId) => {
     switch (true) {
@@ -93,7 +88,6 @@ const GetWeather = () => {
         return "wi-day-fog";
     }
   };
-
 
   const getWindIcon = (degrees) => {
     switch (true) {
@@ -117,13 +111,16 @@ const GetWeather = () => {
     }
   };
 
- const getAlertMessage = (msg)  => {
- setMessage(msg);
- setTimeout(() => setMessage(null), 2000);
- };
+  const getAlertMessage = (msg) => {
+    setMessage(msg);
+    setTimeout(() => setMessage(null), 2000);
+  };
   return (
     <>
-      <Form findWeatherByCity={findWeatherByCity} getAlertMessage={getAlertMessage} />
+      <Form
+        findWeatherByCity={findWeatherByCity}
+        getAlertMessage={getAlertMessage}
+      />
       <Alert message={message} />
       <Layout weatherData={weatherData} />
     </>
