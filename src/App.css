@@ -8,15 +8,19 @@
 }
 
 .App {
-  max-width: 450px;
+  max-width: 500px;
   margin: 50px auto;
   background-color: black;
   border-radius: 15px;
+}
+
+.form {
+  margin: 10px;
   background-image: url(Images/Toxic.png), url(Images/Toxic2.png);
-  background-size: 90px;
+  background-size: 20%;
   background-repeat: no-repeat;
-  background-position-y: 105px;
-  background-position-x: 5px, 357px;
+  background-position-y: 10%;
+  background-position-x: -2%, 104%;
 }
 
 .container {
@@ -85,6 +89,7 @@
 }
 
 .form-control {
+  margin: 10px;
   text-align: center;
   padding: 5px;
   background-color: black;
